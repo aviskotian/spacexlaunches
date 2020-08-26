@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent implements OnInit {
-  private developerName: string;
+  public developerName: string;
   constructor() { 
     this.developerName =  'Avinash Kotian';
   }
