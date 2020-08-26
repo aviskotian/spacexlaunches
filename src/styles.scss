@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+
+/*Import global variables*/
+@import 'assets/scss/variables';
+
+
+/*Import layout or page styles*/
+@import 'assets/scss/pages/global';
+@import 'assets/scss/pages/launches';
+
+/*Import component styles*/
+@import 'assets/scss/components/header';
+@import 'assets/scss/components/footer';
