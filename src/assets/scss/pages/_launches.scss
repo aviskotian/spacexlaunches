@@ -1,5 +1,5 @@
 .launchLayout{padding:10px;}
-.spacexCard{background: $Whitebackground-color; border-radius: 3px; padding: 9px 8px;}
+.spacexCard{background: $Whitebackground-color; border-radius: 3px; padding: 9px 8px;    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);}
 .subHead{font-size: 1.3em; font-weight: $weightBold; color: $font-color;}
 .launchesContainer {
     [class^="col-"]{
