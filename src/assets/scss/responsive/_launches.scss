@@ -1,0 +1,21 @@
+@media (max-width: 991px){
+    .launchesContainer{
+        .spacexCard{
+            width: 230px;
+            margin: 0 auto 15px;
+            .smallHead{
+                span{
+                    &:last-child{font-size:1em;}
+                }
+            } 
+        }
+    } 
+}
+@media (max-width: 575px){
+    .launchesContainer {
+        [class^="col-"]{
+            padding: 0 14px 0px 14px;
+        }
+    }
+    
+}

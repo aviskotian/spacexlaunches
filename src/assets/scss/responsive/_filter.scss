@@ -15,3 +15,16 @@
         }
     }
 }
+@media (max-width: 575px){
+    .filterContainer{
+        .spacexCard{
+            width: 230px;
+            margin: 0 auto 15px;
+        }
+    }
+    .fliterButton {
+        width: 66px !important;
+        margin: 0 20px 0 20px !important;
+    }
+  
+}

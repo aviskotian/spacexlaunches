@@ -1,3 +1,37 @@
 .launchLayout{padding:10px;}
 .spacexCard{background: $Whitebackground-color; border-radius: 3px; padding: 9px 8px;}
 .subHead{font-size: 1.3em; font-weight: $weightBold; color: $font-color;}
+.launchesContainer {
+    [class^="col-"]{
+        padding: 0 14px 0px 0;
+    }
+    .spacexCard{
+        padding: 14px;
+        border-radius: 7px;
+        max-height: 420px;
+        height: 400px;
+        overflow-y: scroll;
+        margin-bottom: 15px;
+        .smallHead{
+        font-weight: 600;
+        font-size: 0.91em;
+        margin: 8px 0 0 0;
+        letter-spacing: 0.3px;
+            &.missionName{
+                color: #3040b9;
+            }
+            span{
+                &:last-child{color: #3040b9;  font-weight: normal;}
+                &#tag{display: inline-block; width:50%;}
+                &#flag{display: inline-block; width:50%; }
+            }
+        }
+        ul{color: #3040b9;font-size: 0.9em; }
+        .imgHolder{
+            background: $background-color;
+            border-radius: 2px;
+            text-align: center;
+            img{width:80%;}
+        }
+    }
+}
