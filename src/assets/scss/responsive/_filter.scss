@@ -1,10 +1,12 @@
 @media (max-width: 1199px){
+    .filterHead{width:75%;}
     .fliterButton{
         width: 63px;
+        margin:0 !important;
     }
 }
 @media (max-width: 991px){
-    .filterHead{width:85%;}
+    .filterHead{width:90%; font-size:0.9em;}
     .filterPanel .innerRow{
         margin: 15px 0px;
         .fliterButton{
