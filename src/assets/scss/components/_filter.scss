@@ -6,8 +6,12 @@
 .filterPanel {
     .innerRow{
         margin: 15px 18px;
+        .fliterButton:first-child{
+            margin-left: 8px;
+        }
         .fliterButton:last-child{
             float: right;
+            margin-right: 8px;
         }
     }
     .innerRow:last-child span .fliterButton:last-child{visibility: hidden;}
