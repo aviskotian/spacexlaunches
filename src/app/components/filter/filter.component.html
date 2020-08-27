@@ -1,1 +1,29 @@
-<p>filter works!</p>
+<div class="filterContainer">
+    <div class="spacexCard">
+        <h2 class="subHead">Filters</h2>
+        <div class="filterHead">Launch Year</div>
+        <div class="filterPanel">
+            <div class="innerRow"  *ngFor="let year of yearArray; let i = index; let even = even;">
+                <span *ngIf="even">
+                    <div class="fliterButton" [ngClass]="{'active': selectedYear == yearArray[i]}" (click)="yearflterClick($event, yearArray[i])">{{ yearArray[i] }} </div>
+                    <div class="fliterButton" [ngClass]="{'active': selectedYear == yearArray[i+1]}" (click)="yearflterClick($event, yearArray[i+1])">{{ yearArray[i+1] }}</div>
+                </span>
+            </div>
+        </div>
+        <div class="filterHead marginTop25">Successful Launch</div>
+        <div class="filterPanel">
+            <div class="innerRow">
+                <div class="fliterButton" [ngClass]="{'active': selectedLaunch == 'true'}" (click)="launchflterClick($event, 'true')">True</div>
+                <div class="fliterButton" [ngClass]="{'active': selectedLaunch == 'flase'}" (click)="launchflterClick($event, 'flase')">False</div>
+            </div>
+        </div>
+        <div class="filterHead marginTop25">Successful Landing</div>
+        <div class="filterPanel">
+            <div class="innerRow">
+                <div class="fliterButton" [ngClass]="{'active': selectedLanding == 'true'}" (click)="landingflterClick($event, 'true')">True</div>
+                <div class="fliterButton" [ngClass]="{'active': selectedLanding == 'flase'}" (click)="landingflterClick($event, 'flase')">False</div>
+            </div>
+        </div>
+        
+    </div>
+</div>
