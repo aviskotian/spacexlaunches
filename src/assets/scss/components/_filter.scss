@@ -1,6 +1,6 @@
 .filterHead{text-align: center;width: 55%;margin: $autoMargin;border-bottom: $border-thin solid #cacaca;    padding-bottom: 5px;}
 .fliterButton{
-    width: 70px;text-align: center;display: inline-block;background: #c5e19b;border-radius: 5px;padding: 4px 0px;cursor: pointer;
+    width: 80px;text-align: center;display: inline-block;background: #c5e19b;border-radius: 5px;padding: 4px 0px;cursor: pointer;
     &.active{background: #7cba00}
 }
 .filterPanel {
