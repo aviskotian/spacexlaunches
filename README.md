@@ -30,6 +30,12 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 Refer below screenshot for the scores
 ![Performance Screenshot](src/assets/img/performance_lighthouse.jpg)
 
+## Production Deployment
+-This project is deployed in Heroku. Below is the production URL.\
+https://spacexlaunches2.herokuapp.com/
+
+
+
 
 ## Running unit tests
 
