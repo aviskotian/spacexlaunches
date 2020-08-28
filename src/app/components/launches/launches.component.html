@@ -1,194 +1,35 @@
 <div class="launchesContainer">
-    <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png" />
+    <div class="row" *ngIf="data.length != 0">
+        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let item of data">
+            <div class="spacexCard" >
+                <div class="imgHolder" *ngIf="item.links.mission_patch_small!= null">
+                    <img src="{{item.links.mission_patch_small}}" />
                 </div>
-                <div class="missionName smallHead">FalconSat #1</div>
+                <div class="imgHolder" *ngIf="item.links.mission_patch_small == null">
+                    <img src="../../../assets/img/mission.svg" />
+                </div>
+                <div class="missionName smallHead">{{item.mission_name}}</div>
                 <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
+                <span *ngIf="item.mission_id.length > 0">
+                    <ul *ngFor="let subitem of item['mission_id']">
+                        <li>{{subitem}}</li>
+                    </ul>
+                </span>
+                <ul *ngIf="item.mission_id.length == 0">
+                    <li>N/A</li>
                 </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
+                <div class="smallHead">Launch Year: <span>{{item.launch_year}}</span></div>
                 <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/42/b0/vP0sk3d5_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
+                    <span id="tag">Successful Launch:</span> <span id="flag"  *ngIf="item.launch_success!= null"> {{item.launch_success}}</span> <span id="flag"  *ngIf="item.launch_success == null"> N/A</span>
                 </div>
                 <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/91/27/VhC1TTYN_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/1b/b6/Z4oktZeR_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/a0/cb/s1h2RuR0_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/a7/b4/bcMrHMey_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/bf/12/oSP2EwNz_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/b4/28/cQwcs8qz_o.png"  />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12">
-            <div class="spacexCard">
-                <div class="imgHolder">
-                    <img src="https://images2.imgbox.com/3c/0e/T8iJcSN3_o.png" />
-                </div>
-                <div class="missionName smallHead">FalconSat #1</div>
-                <div class="smallHead">Mission Ids:</div>
-                <ul>
-                    <li>EE86F74</li>
-                </ul>
-                <div class="smallHead">Launch Year: <span>2019</span></div>
-                <div class="smallHead">
-                    <span id="tag">Successful Launch:</span> <span id="flag"> true</span>
-                </div>
-                <div class="smallHead">
-                    <span id="tag">Successful Landing:</span> <span id="flag"> true</span>
+                    <span id="tag">Successful Landing:</span> <span id="flag"  *ngIf="item.rocket.first_stage.cores[0].land_success != null"> {{item.rocket.first_stage.cores[0].land_success}}</span><span id="flag"  *ngIf="item.rocket.first_stage.cores[0].land_success == null"> N/A </span>
                 </div>
             </div>
         </div>
     </div>  
+    <div *ngIf="data.length == 0" class="nodata" >
+        No data Found
+    </div>
 </div>
+

@@ -14,7 +14,7 @@ const routes: Routes = [
     path: '',
     component: DashboardComponent,
     children: [
-        {
+      {
       path: '',
       loadChildren: './layouts/dashboard/dashboard.module#DashboardModule'
   }]},

@@ -9,7 +9,7 @@
         padding: 14px;
         border-radius: 7px;
         max-height: 420px;
-        height: 400px;
+        height: 370px;
         overflow-y: scroll;
         margin-bottom: 15px;
         .smallHead{
@@ -19,9 +19,12 @@
         letter-spacing: 0.3px;
             &.missionName{
                 color: #3040b9;
+                margin: 12px 0 18px 0;
+                font-size: 1em;
             }
             span{
-                &:last-child{color: #3040b9;  font-weight: normal;}
+                &:last-child{color: #3040b9;  font-weight: normal; padding-left: 13px;
+                }
                 &#tag{display: inline-block; width:50%;}
                 &#flag{display: inline-block; width:50%; }
             }
@@ -35,3 +38,4 @@
         }
     }
 }
+.nodata{text-align: center;font-weight: 600;font-size: 1.2em;padding-top: 18vh;}

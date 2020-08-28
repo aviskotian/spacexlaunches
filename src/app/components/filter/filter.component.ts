@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+
 
 @Component({
   selector: 'app-filter',
@@ -11,22 +13,76 @@ export class FilterComponent implements OnInit {
   selectedYear: any;
   selectedLaunch: any;
   selectedLanding: any;
-  constructor() {
+  count = 1;
+  constructor(private router: Router, private route: ActivatedRoute) {
 
   }
   yearflterClick(event, newValue) {
-    this.selectedYear = newValue;
-    console.log(this.selectedYear);
+    if (this.selectedYear != null && this.selectedYear == newValue) {
+      this.selectedYear = null;
+      this.router.navigate(['.'], {
+        relativeTo: this.route,
+        queryParams: {
+          launch_success: this.selectedLaunch,
+          land_success: this.selectedLanding
+        }
+      });
+    } else {
+      this.selectedYear = newValue;
+      this.router.navigate(['/launches/'], {
+        queryParams: {
+          launch_year: this.selectedYear
+        },
+        queryParamsHandling: 'merge'
+      });
+    }
   }
   launchflterClick(event, newValue) {
-    this.selectedLaunch = newValue;
-    console.log(this.selectedLaunch);
+    if (this.selectedLaunch != null && this.selectedLaunch == newValue) {
+      this.selectedLaunch = null;
+      this.router.navigate(['.'], {
+        relativeTo: this.route,
+        queryParams: {
+          launch_year: this.selectedYear,
+          land_success: this.selectedLanding
+        }
+      });
+    } else {
+      this.selectedLaunch = newValue;
+      this.router.navigate(['/launches/'], {
+        queryParams: {
+          launch_success: this.selectedLaunch
+        },
+        queryParamsHandling: 'merge'
+      });
+    }
   }
   landingflterClick(event, newValue) {
-    this.selectedLanding = newValue;
-    console.log(this.selectedLaunch);
+    if (this.selectedLanding != null && this.selectedLanding == newValue) {
+      this.selectedLanding = null;
+      this.router.navigate(['.'], {
+        relativeTo: this.route,
+        queryParams: {
+          launch_year: this.selectedYear,
+          launch_success: this.selectedLaunch
+        }
+      });
+    } else {
+      this.selectedLanding = newValue;
+      this.router.navigate(['/launches/'], {
+        queryParams: {
+          land_success: this.selectedLanding
+        },
+        queryParamsHandling: 'merge'
+      });
+    }
   }
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.selectedYear = params['launch_year'];
+      this.selectedLaunch = params['launch_success'];
+      this.selectedLanding = params['land_success'];
+    });
   }
 
 }

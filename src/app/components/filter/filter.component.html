@@ -5,7 +5,7 @@
         <div class="filterPanel">
             <div class="innerRow"  *ngFor="let year of yearArray; let i = index; let even = even;">
                 <span *ngIf="even">
-                    <div class="fliterButton" [ngClass]="{'active': selectedYear == yearArray[i]}" (click)="yearflterClick($event, yearArray[i])">{{ yearArray[i] }} </div>
+                    <div class="fliterButton" [ngClass]="{'active': selectedYear == yearArray[i] }" (click)="yearflterClick($event, yearArray[i])">{{ yearArray[i] }} </div>
                     <div class="fliterButton" [ngClass]="{'active': selectedYear == yearArray[i+1]}" (click)="yearflterClick($event, yearArray[i+1])">{{ yearArray[i+1] }}</div>
                 </span>
             </div>
