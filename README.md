@@ -29,7 +29,7 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 ## Lighthouse score for Perofrmance, SEO, Accessibility and Best practices
 Refer below screenshot for the scores
 ![Performance Screenshot](src/assets/img/performance_lighthouse.jpg)
-Format: ![Alt Text](url)
+
 
 ## Running unit tests
 
