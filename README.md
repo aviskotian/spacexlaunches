@@ -26,6 +26,11 @@ Run `ng build` to build the project. The build artifacts will be stored in the `
 - Bootstrap v4.3.1
 - SASS 1.22.9
 
+## Lighthouse score for Perofrmance, SEO, Accessibility and Best practices
+Refer below screenshot for the scores
+![Performance Screenshot](src/assets/img/performance_lighthouse.jpg)
+Format: ![Alt Text](url)
+
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
