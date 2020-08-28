@@ -12,11 +12,17 @@ export class LaunchesComponent implements OnInit {
   launchSuccess: string;
   landSuccess: string;
   data: any [] = [];
+  loader = false;
+  loaded = false;
   constructor(private dataservice: DataService, private route: ActivatedRoute) {
   }
   getData(launchYear, launchSuccess, landSuccess) {
+    this.loader = true;
+    this.loaded = false;
     this.dataservice.getData(launchYear, launchSuccess, landSuccess)
     .subscribe((response: any) => {
+      this.loaded = true;
+      this.loader = false;
       this.data = response;
       console.log(this.data);
     });
@@ -28,7 +34,6 @@ export class LaunchesComponent implements OnInit {
       this.landSuccess = params['land_success'];
       this.getData(this.launchYear, this.launchSuccess, this.landSuccess);
     });
-    
   }
 
 }

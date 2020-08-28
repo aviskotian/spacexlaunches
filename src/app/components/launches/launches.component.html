@@ -1,5 +1,5 @@
 <div class="launchesContainer">
-    <div class="row" *ngIf="data.length != 0">
+    <div class="row" *ngIf="data.length != 0 && loaded">
         <div class="col-lg-3 col-md-6 col-sm-12 col-xs-12" *ngFor="let item of data">
             <div class="spacexCard" >
                 <div class="imgHolder" *ngIf="item.links.mission_patch_small!= null">
@@ -11,8 +11,8 @@
                 <div class="missionName smallHead">{{item.mission_name}}</div>
                 <div class="smallHead">Mission Ids:</div>
                 <span *ngIf="item.mission_id.length > 0">
-                    <ul *ngFor="let subitem of item['mission_id']">
-                        <li>{{subitem}}</li>
+                    <ul>
+                        <li *ngFor="let subitem of item['mission_id']">{{subitem}}</li>
                     </ul>
                 </span>
                 <ul *ngIf="item.mission_id.length == 0">
@@ -28,8 +28,11 @@
             </div>
         </div>
     </div>  
-    <div *ngIf="data.length == 0" class="nodata" >
+    <div *ngIf="data.length == 0 && ( this.launchYear != null || this.launchSuccess != null || this.landSuccess != null) && loaded" class="nodata" >
         No data Found
+    </div>
+    <div class="loader" *ngIf = "loader" >
+        <img src="https://thumbs.gfycat.com/MajorWhoppingGalapagosmockingbird-small.gif">
     </div>
 </div>
 
