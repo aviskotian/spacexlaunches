@@ -29,7 +29,6 @@ export class LaunchesComponent implements OnInit {
       this.data = response;
       console.log(this.data);
     }, (error) => {
-      console.log(error);
       this.errorMsg = error.error.error;
       this.errorCode = error.status;
       this.loader = false;
