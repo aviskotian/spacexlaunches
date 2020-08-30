@@ -14,6 +14,9 @@ export class LaunchesComponent implements OnInit {
   data: any [] = [];
   loader = false;
   loaded = false;
+  ifError = false;
+  errorMsg = null;
+  errorCode = null;
   constructor(private dataservice: DataService, private route: ActivatedRoute) {
   }
   getData(launchYear, launchSuccess, landSuccess) {
@@ -25,6 +28,12 @@ export class LaunchesComponent implements OnInit {
       this.loader = false;
       this.data = response;
       console.log(this.data);
+    }, (error) => {
+      console.log(error);
+      this.errorMsg = error.error.error;
+      this.errorCode = error.status;
+      this.loader = false;
+      this.ifError = true;
     });
   }
   ngOnInit() {

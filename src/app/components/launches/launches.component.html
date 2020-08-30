@@ -30,6 +30,10 @@
     </div>  
     <div *ngIf="data.length == 0 && ( this.launchYear != null || this.launchSuccess != null || this.landSuccess != null) && loaded" class="nodata" >
         No data Found
+    </div >
+    <div class="nodata" *ngIf="ifError">
+        There is an error in API : {{errorMsg}}<br>
+        Error status code : {{errorCode}}<br>
     </div>
     <div class="loader" *ngIf = "loader" >
         <img src="https://thumbs.gfycat.com/MajorWhoppingGalapagosmockingbird-small.gif">
