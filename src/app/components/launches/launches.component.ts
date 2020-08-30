@@ -22,8 +22,7 @@ export class LaunchesComponent implements OnInit {
   getData(launchYear, launchSuccess, landSuccess) {
     this.loader = true;
     this.loaded = false;
-    this.errorMsg = false;
-    this.errorCode = false;
+    this.ifError = false;
     this.dataservice.getData(launchYear, launchSuccess, landSuccess)
     .subscribe((response: any) => {
       this.loaded = true;
